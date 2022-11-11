@@ -2,7 +2,7 @@
   "name": "kathryn-herod",
   "version": "1.0.0",
   "private": true,
-  "description": "kathryn-herod",
+  "description": "Gatsby implementation of personal website",
   "author": "Kathryn Herod",
   "keywords": [
     "gatsby"
@@ -20,16 +20,18 @@
     "@mdx-js/react": "^2.1.5",
     "gatsby": "^5.0.0",
     "gatsby-plugin-google-analytics": "^5.0.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
     "gatsby-plugin-mdx": "^5.0.0",
+    "gatsby-plugin-sass": "^6.0.0",
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-plugin-sitemap": "^6.0.0",
-    "gatsby-plugin-theme-ui": "^0.15.4",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-    "theme-ui": "^0.15.4"
+    "sass": "^1.56.1"
   }
 }

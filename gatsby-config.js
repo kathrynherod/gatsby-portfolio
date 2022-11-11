@@ -4,9 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `Kathryn Herod `,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.kathrynherod.com`
   },
-  plugins: ["gatsby-plugin-theme-ui", {
+  plugins: ["gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": "G-DZ1GQPLC74"
