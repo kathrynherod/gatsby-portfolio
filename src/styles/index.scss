@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800&family=Source+Code+Pro&family=Vast+Shadow&display=swap');
+@import '/src/styles/variables';
+
+html,
+body {
+    background-color: $dark-blue;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
