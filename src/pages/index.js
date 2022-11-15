@@ -4,16 +4,23 @@ import Intro from '../components/Intro';
 import About from '../components/About';
 import Work from '../components/Work';
 import { base, light, dark } from '../styles/theme';
-import { GlobalStyles } from '../styles/GlobalStyles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import '../styles/index.scss';
 
 const IndexPage = () => {
   const themesMap = { light, dark };
   const [currentTheme, setCurrentTheme] = useState('dark');
   const [theme, setTheme] = useState(
     createTheme({
-      ...base, colors: themesMap[currentTheme], palette: { mode: currentTheme }
+      ...base,
+      colors: themesMap[currentTheme],
+      palette: {
+        mode: currentTheme
+      },
+      typography: {
+        fontFamily: 'Noto Sans',
+      },
     })
   );
 
@@ -40,7 +47,7 @@ const IndexPage = () => {
         <ThemeProvider theme={theme}>
           <Box className="app-container" sx={{ display: 'flex', flexDirection: 'column' }}>
             <FixedNavbar currentTheme={currentTheme} theme={theme} updateCurrentTheme={updateTheme} />
-            <Intro />
+            <Intro theme={theme}/>
             <About />
             <Work />
           </Box>

@@ -3,15 +3,7 @@
 
 html,
 body {
-    background-color: $dark-blue;
     margin: 0;
     height: 100vh;
     width: 100vw;
-
-    .app-container {
-        section {
-            height: 100%;
-            width: 100%;
-        }
-    }
 }

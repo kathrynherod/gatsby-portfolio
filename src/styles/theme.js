@@ -1,23 +1,3 @@
-import './variables.scss';
-
-// const theme = {
-//     light: {
-//         id: "t_light_01",
-//         name: "Light",
-//         colors:  {
-//             body: $ghost-white,
-//         }
-
-//     },
-//     dark: {
-//         id: "t_dark_01",
-//         name: "Dark",
-//         colors: {
-//             body: $dark-blue,
-//         }
-//     },
-// };
-
 export const base = {
     colors: {
         darkBlue: '#0A2463',
@@ -30,10 +10,10 @@ export const base = {
         blueGreen: '#1DD3B0',
         slateGreen: '#0E402D',
     },
-    space: ['0px', '2px', '4px', '8px', '16px', '32px', '64px'],
+    space: ['0px', '2px', '4px', '8px', '16px', '24px', '32px', '64px'],
     fonts: {
-        heading: 'Inter, system-ui, sans-serif',
-        body: 'Inter, system-ui, sans-serif',
+        heading: 'Open Sans, system-ui, sans-serif',
+        body: 'Open Sans, system-ui, sans-serif',
     },
     fontSizes: {
         xs: '0.75rem',
@@ -52,7 +32,7 @@ export const light = {
         active: base.colors.slateGreen,
         text: base.colors.darkBlue,
     },
-    primary: '#4851f4',
+    primary: base.colors.lightGreen,
     nav: base.colors.ghostWhite,
     text: base.colors.darkBlue,
 }
@@ -65,7 +45,7 @@ export const dark = {
         active: base.colors.lightGreen,
         text: base.colors.ghostWhite,
     },
-    primary: '#4851f4',
+    primary: base.colors.lightGreen,
     nav: base.colors.darkBlue,
     text: base.colors.ghostWhite,
 }
