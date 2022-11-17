@@ -24,6 +24,17 @@ const IndexPage = () => {
     })
   );
 
+  const handleLinkClick = (url) => {
+    const id = url.substring(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({behavior: "smooth"});
+          el.focus();
+        }
+      }, 100);
+  }
+
   const updateTheme = (selectedTheme) => {
     setCurrentTheme(selectedTheme);
 
@@ -46,9 +57,14 @@ const IndexPage = () => {
       <>
         <ThemeProvider theme={theme}>
           <Box className="app-container" sx={{ display: 'flex', flexDirection: 'column' }}>
-            <FixedNavbar currentTheme={currentTheme} theme={theme} updateCurrentTheme={updateTheme} />
+            <FixedNavbar
+              currentTheme={currentTheme}
+              theme={theme}
+              onLinkClick={handleLinkClick}
+              updateCurrentTheme={updateTheme}
+            />
             <Intro theme={theme}/>
-            <About />
+            <About theme={theme}/>
             <Work />
           </Box>
         </ThemeProvider>

@@ -15,12 +15,12 @@ const Intro = ({ theme }) => {
     `;
 
     return (
-        <Section className='intro__wrapper'>
+        <Section id="intro" className='intro__wrapper'>
             <Container>
                 <Typography variant="h5" sx={{ color: theme.colors.text }}>
                     Hey Y'all! I'm
                 </Typography>
-                <Slide in={true} direction="up" timeout={1000} >
+                <Slide in={true} appear={false} direction="up" timeout={1000} >
                     <Typography variant="h3" sx={{
                         color: theme.colors.text,
                         fontFamily: 'Vast Shadow, cursive',

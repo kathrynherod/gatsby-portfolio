@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
+import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -35,7 +35,7 @@ const navLinks = [
     }
 ]
 
-function FixedNavbar({ currentTheme, theme, updateCurrentTheme, window }) {
+function FixedNavbar({ currentTheme, theme, onLinkClick, updateCurrentTheme, window }) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const container = window !== undefined ? () => window().document.body : undefined;
     const handleDrawerToggle = () => {
@@ -49,13 +49,13 @@ function FixedNavbar({ currentTheme, theme, updateCurrentTheme, window }) {
             <List>
                 {navLinks.map(({ displayName, target, url }) => (
                     <ListItem key={displayName} disablePadding>
-                        <Link key={displayName} href={url} target={target}
+                        <Button key={displayName} href={url} target={target}
                             sx={{
                                 color: theme.colors.link.text,
                             }}
                         >
                             {displayName}
-                        </Link>
+                        </Button>
                     </ListItem>
                 ))}
             </List>
@@ -67,9 +67,33 @@ function FixedNavbar({ currentTheme, theme, updateCurrentTheme, window }) {
             <AppBar component="nav" sx={{ background: theme.colors.nav }}>
                 <Toolbar sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'row-reverse', sm: 'row' },
                     justifyContent: 'space-between',
                 }}>
+                    <Typography
+                        variant="h6"
+                        sx={{ display: { sm: 'block' } }}
+                    >
+                        KH
+                    </Typography>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                        {navLinks.map(({ displayName, target, url }) => (
+                            <Button key={displayName} href={url} target={target}
+                                sx={{
+                                    color: theme.colors.link.text,
+                                    padding: theme.space[4],
+                                    textDecoration: 'none',
+                                }}
+                                onClick={() => {
+                                    if (displayName !== 'Resume') {
+                                        onLinkClick(url)
+                                    }
+                                }}
+                            >
+                                {displayName}
+                            </Button>
+                        ))}
+                    </Box>
+                    <ModeSwitch currentTheme={currentTheme} updateTheme={updateCurrentTheme} />
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -79,28 +103,6 @@ function FixedNavbar({ currentTheme, theme, updateCurrentTheme, window }) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ display: { sm: 'block' } }}
-                    >
-                        KH
-                    </Typography>
-
-                    <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-                        {navLinks.map(({ displayName, target, url }) => (
-                            <Link key={displayName} href={url} target={target}
-                                sx={{
-                                    color: theme.colors.link.text,
-                                    padding: theme.space[4],
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                {displayName}
-                            </Link>
-                        ))}
-                    </Box>
-                    <ModeSwitch currentTheme={currentTheme} updateTheme={updateCurrentTheme} />
                 </Toolbar>
             </AppBar>
             <Box component="nav">
